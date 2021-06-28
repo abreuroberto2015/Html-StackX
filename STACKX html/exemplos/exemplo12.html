@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+
+        function validar() {
+            meuNome = document.getElementById("nome").value;
+            if (meuNome == "a" || meuNome == "b") {
+                document.getElementById("nome").value = "Beto";
+            }
+            else {
+                document.getElementById("nome").value = "José";
+            }
+
+            return false;
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="return validar();">
+        Nome: <input type="text" name="nome" id="nome">
+        <input type="submit">
+
+    </form>
+
+</body>
+
+</html>
