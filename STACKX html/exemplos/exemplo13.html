@@ -8,21 +8,34 @@
     <title>Document</title>
 
     <script type="text/javascript">
-        function mostrarCampo() {
-
+        function mostrarCampo() 
+        {
+           if(document.getElementById("bloco1").checked == true)
+           {
+               alert("Bloco 1 marcado");
+           }
+           else
+           {
+            alert("Bloco 2 marcado");
+           }
         }
-
-
     </script>
+
 </head>
 
 <body>
+
+    <form>
+        <input type="radio" name="bloco" id="bloco1" onclick="mostrarCampo()">Bloco 1 
+
+        <input type="radio" name="bloco" id="bloco2" onclick="mostrarCampo()">Bloco 2
+    </form>
+
     <div id="divBloco1" style="display: none;">
         Texto div 1
-
     </div>
 
-    <div id="divBloco2" style="display: none;>
+    <div id="divBloco2" style="display: none;">
         Texto div 2
     </div>
 
