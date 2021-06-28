@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
 
-	<script type="text/javascript">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
 		
-		nome = "André"
+		<script type="text/javascript">
 		
-		if(nome == "André")
-			{
-	 			
-			}
-			else
-			{
+		alert(document.getElementById("meuNome").value);
 			
+			function validar()
+			{								
+				meuObjeto = new Object();
+				meuObjeto.nome = document.getElementById("nome").value;
+				meuObjeto.idade = document.getElementById("idade").value;
+				meuObjeto.endereco = document.getElementById("endereco").value;
+				
+				mostrarValores(meuObjeto);
+				
+				//meuObjeto2 = {nome: "beto", idade: 43, endereco: "casa do beto"};
+				
+				//mostrarValores(meuObjeto2);
+				
 			}
-	
+			
+			function mostrarValores(meuObjetoParam)
+			{
+				alert(meuObjetoParam.nome);
+				alert(meuObjetoParam.idade);
+				alert(meuObjetoParam.endereco);
+			}
+					
+			
 		</script>
-</head>
-<body>
+		
+	</head>
+
+	<body>
+		<form onsubmit="validar()">
+			Nome: <input type="text" name='nome' id="nome" value="" > <br>
+			Idade: <input type="text" name='idade' id="idade" value="" > <br>
+			Endereco: <input type="text" name='endereco' id="endereco" value="" > <br>
+				
+			<input type="submit">
+		</form>	
+		
+	</body>		
 	
-</body>
-</html>
+</html>	
