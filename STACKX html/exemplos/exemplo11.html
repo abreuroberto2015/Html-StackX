@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script type="text/javascript">
+			
+			function validar()
+			{
+				/*idade = 10;
+				idade = idade + 20;
+				
+				
+				alert("idade");
+				
+				nome = "André Alves";
+				
+				nome = nome + "outra string";
+				
+				alert(nome);*/
+				
+				meuNome = document.getElementById("nome").value;
+				
+				alert(meuNome);
+				
+				return confirm("Deseja excluir esse usúario?");				
+			
+			}
+		
+		</script>
+		
+	</head>
+
+	<body>
+	
+		<h1>Título</h1>
+	
+		<form onsubmit="return validar()">
+		
+			Nome:<input type="text" name="nome" id="nome">
+			
+			<input type="submit" value="atualizar">
+			
+		</form>	
+		
+	</body>		
+	
+</html>			
