@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -8,27 +8,31 @@
     <title>Document</title>
 
     <script type="text/javascript">
-        function mostrarCampo() 
+        function mostrarCampo()
         {
-           if(document.getElementById("bloco1").checked == true)
-           {
-               alert("Bloco 1 marcado");
-           }
-           else
-           {
-            alert("Bloco 2 marcado");
-           }
+            if (document.getElementById("bloco1").checked == true)
+            {
+                document.getElementById("divBloco1").style.display = "block";
+                document.getElementById("divBloco2").style.display = "none";
+            }
+
+            if (document.getElementById("bloco2").checked == true)
+            {
+                document.getElementById("divBloco1").style.display = "none";
+                document.getElementById("divBloco2").style.display = "block";
+            }
         }
+
     </script>
 
 </head>
 
 <body>
 
-    <form>
-        <input type="radio" name="bloco" id="bloco1" onclick="mostrarCampo()">Bloco 1 
+    <form onsubmit="">
+        <input type="radio" name="bloco" id="bloco1" onclick="mostrarCampo();" value="A">Bloco 1
 
-        <input type="radio" name="bloco" id="bloco2" onclick="mostrarCampo()">Bloco 2
+        <input type="radio" name="bloco" id="bloco2" onclick="mostrarCampo();" value="B">Bloco 2
     </form>
 
     <div id="divBloco1" style="display: none;">
