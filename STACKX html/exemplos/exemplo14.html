@@ -11,7 +11,7 @@
 			
 			function validar()
 			{								
-				meuObjeto = new Object();
+/*				meuObjeto = new Object();
 				meuObjeto.nome = document.getElementById("nome").value;
 				meuObjeto.idade = document.getElementById("idade").value;
 				meuObjeto.endereco = document.getElementById("endereco").value;
@@ -21,14 +21,49 @@
 				//meuObjeto2 = {nome: "beto", idade: 43, endereco: "casa do beto"};
 				
 				//mostrarValores(meuObjeto2);
-				
+
+				meuObjeto3 = new Object();
+				meuObjeto3.marca ="mercedes";
+				meuObjeto3.modelo ="AMG c63";
+				meuObjeto3.anoFabricacao="2021";
+				meuObjeto3.anoModelo ="2022";
+				meuObjeto3.cor ="prata";
+				mostrarValores(meuObjeto3);
+
+				meuObjeto4 = new Object();
+				meuObjeto4.marca ="Chevrolet";
+				meuObjeto4.modelo ="Monza";
+				meuObjeto4.anoFabricacao="1992";
+				meuObjeto4.anoModelo ="1993";
+				meuObjeto4.cor ="bordo";
+				mostrarValores(meuObjeto4);
+
+				meuObjeto5 = new Object();
+				meuObjeto5.processador = "celerom";
+				meuObjeto5.velocidade ="1.7 Ghz";
+				meuObjeto5.ram = "512 Mb";
+				meuObjeto5.hd = "40 gb";
+				meuObjeto5.monitor ="14 polegadas";
+				mostrarValores(meuObjeto5);
+*/				
+/*				minhaVar = 1;
+				while(minhaVar < 10)
+				{
+					alert(minhaVar);
+					minhaVar = minhaVar + 1
+				} 
+				for(i = 0 ; i < 5; i++)
+				{
+					alert(i);
+*/									
 			}
 			
 			function mostrarValores(meuObjetoParam)
 			{
-				alert(meuObjetoParam.nome);
-				alert(meuObjetoParam.idade);
-				alert(meuObjetoParam.endereco);
+				for(i in meuObjetoParam) 
+				{
+					alert(meuObjetoParam[i]);
+				}
 			}
 					
 			
