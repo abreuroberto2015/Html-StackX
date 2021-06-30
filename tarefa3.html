@@ -1,73 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarefa 3</title>
-
-    <script type="text/javascript">
-
-function mostrarCampo()
-        {
-            if (document.getElementById("Masculino").checked == true)
-            {
-                document.getElementById("divMasculino").style.display = "block";
-                document.getElementById("divFeminino").style.display = "none";
-            }
-
-            if (document.getElementById("Feminino").checked == true)
-            {
-                document.getElementById("divMasculino").style.display = "none";
-                document.getElementById("divFeminino").style.display = "block";
-            }
-        }
-
-    </script>
-
 </head>
 
+<script type="text/javascript">
+
+    function mostrarImagem() {
+        if (document.getElementById("sexoM").checked == true) {
+            document.getElementById("img2").style.display = "block";
+            document.getElementById("img1").style.display = "none";
+        }
+        else {
+            document.getElementById("img1").style.display = "block";
+            document.getElementById("img2").style.display = "none";
+        }
+        if (document.getElementById("sexoM").checked == true) {
+            sexo = "M"
+        }
+        else {
+            sexo = "F"
+        }
+    }
+    //______________**____________//       
+    function objetoPessoa() {
+        pessoaObjeto = {
+            nome: document.getElementById("nome").value, email: document.getElementById("email").value, telefone: document.getElementById("telef").value, cpf: document.getElementById("cpf").value,
+            sexo: sexo, estado: document.getElementById("estado").value, endereco: document.getElementById("endereco").value
+        };
+
+        for(i in pessoaObjeto) {
+            alert(pessoaObjeto[i]);
+        }
+
+        return confirm("Deseja fazer o cadastro?")
+    }
+
+</script>
+
 <body>
-    <h1>Cadastro de Cliente</h1>
 
-    <form>
-        Nome:<input type="text" name="nome" id="nome" required maxlength="80">
-        <br>
+    <div style="width: 25%;">
+        <h1>Cadastro de Cliente</h1>
 
-        E-mail:<input type="email" name="email" id="email" required maxlength="100">
-        <br>
+        <img src="https://cdn.icon-icons.com/icons2/621/PNG/512/business-woman-2_icon-icons.com_56996.png" id="img1" alt=""
+            width="100px" height="100px" style="float: right; display: none;">
 
-        Telefone:<input type="tel" name="tel" id="tel" required >
-        <br>
 
-        CPF: <input type="text" name="cpf" id="cpf" required="required" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
-        <br>
+        <img src="https://cdn.icon-icons.com/icons2/621/PNG/512/business-man-1_icon-icons.com_57000.png" id="img2" alt=""
+            width="100px" height="100px" style="float: right; display: none;">
 
-        Sexo:<input required type="radio" name="sexo" id="Masculino" onclick="mostrarCampo();" value="M"/>Masculino
-        <input required type ="radio" name="sexo" id="Feminino" onclick="mostrarCampo();" value="F"/>Feminino
-        <br>
 
-        Estados: <select>
-            <option value=“SC”>Santa Catarina</option>
-            <option value=“RJ”>Rio de Janeiro</option>
-            <option value=“SP”>São Paulo</option>
-            <option value=“MG”>Minas Gerais</option>
-            <option value=“PR”>Paraná</option>
-        </select>
-        <br>
 
-        Endereço:<input type="text" name="endereco" id="endereco" required minlength="10" maxlength="120">
-        <br>
+        <form onsubmit="return objetoPessoa()">
 
-        <input type="submit">
-    </form>
+            Nome:<input type="text" name="nome" id="nome" required="required" pattern=".{1,80}">
+            <br>
 
-    <div id="divMasculino" style="display: none; text-align: center; height: 100px;">
-        <img src="https://cdn.icon-icons.com/icons2/621/PNG/512/business-man-1_icon-icons.com_57000.png">
+            E-mail:<input type="email" name="email" id="email" required="required" pattern=".{1,100">
+            <br>
+
+            Telefone:<input type="text" name="telef" id="telef" required="required" pattern="\d{8,9}">
+            <br>
+
+            CPF: <input type="text" name="cpf" id="cpf" required="required" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+            <br>
+
+            Sexo:<input type="radio" name="sexo" id="sexoM" value="M" required="required" onclick="mostrarImagem()">
+            <label for="sexoM">Masculino</label>
+            <input type="radio" name="sexo" id="sexoF" value="F" required="required" onclick="mostrarImagem()">
+            <label for="sexoF">Feminino</label>
+            <br>
+
+            Estados: <select name="estado" id="estado" required="required">
+                <option value=“SC”>Santa Catarina</option>
+                <option value=“RJ”>Rio de Janeiro</option>
+                <option value=“SP”>São Paulo</option>
+                <option value=“MG”>Minas Gerais</option>
+                <option value=“PR”>Paraná</option>
+            </select>
+            <br>
+
+            Endereço: <input type="text" name="endereco" id="endereco" required="required" minlength="10"
+                maxlength="120">
+            <br>
+
+            <input type="submit" name="sub" id="sub">
+        </form>
     </div>
-    <div id="divFeminino" style="display: none;">
-        <img src="https://cdn.icon-icons.com/icons2/621/PNG/512/business-woman-2_icon-icons.com_56996.png">
-    </div>
+
+
 
 </body>
+
 </html>
